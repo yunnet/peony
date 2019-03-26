@@ -1,0 +1,4097 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /alarm_dtu_setting/:
+    get:
+      tags:
+      - alarm_dtu_setting
+      description: get AlarmDtuSetting
+      operationId: AlarmDtuSettingController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmDtuSetting'
+        "403":
+          description: ""
+    post:
+      tags:
+      - alarm_dtu_setting
+      description: create AlarmDtuSetting
+      operationId: AlarmDtuSettingController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AlarmDtuSetting content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AlarmDtuSetting'
+      responses:
+        "201":
+          description: '{int} models.AlarmDtuSetting'
+        "403":
+          description: body is empty
+  /alarm_dtu_setting/{id}:
+    get:
+      tags:
+      - alarm_dtu_setting
+      description: get AlarmDtuSetting by id
+      operationId: AlarmDtuSettingController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmDtuSetting'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - alarm_dtu_setting
+      description: update the AlarmDtuSetting
+      operationId: AlarmDtuSettingController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AlarmDtuSetting content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AlarmDtuSetting'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmDtuSetting'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - alarm_dtu_setting
+      description: delete the AlarmDtuSetting
+      operationId: AlarmDtuSettingController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /alarm_types/:
+    get:
+      tags:
+      - alarm_types
+      description: get AlarmTypes
+      operationId: AlarmTypesController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmTypes'
+        "403":
+          description: ""
+    post:
+      tags:
+      - alarm_types
+      description: create AlarmTypes
+      operationId: AlarmTypesController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AlarmTypes content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AlarmTypes'
+      responses:
+        "201":
+          description: '{int} models.AlarmTypes'
+        "403":
+          description: body is empty
+  /alarm_types/{id}:
+    get:
+      tags:
+      - alarm_types
+      description: get AlarmTypes by id
+      operationId: AlarmTypesController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmTypes'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - alarm_types
+      description: update the AlarmTypes
+      operationId: AlarmTypesController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AlarmTypes content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AlarmTypes'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AlarmTypes'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - alarm_types
+      description: delete the AlarmTypes
+      operationId: AlarmTypesController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_customer/:
+    get:
+      tags:
+      - equipment_customer
+      description: get EquipmentCustomer    http://localhost:8080/v1/equipment_customer/?limit=3&offset=0
+      operationId: EquipmentCustomerController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentCustomer'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_customer
+      description: create EquipmentCustomer
+      operationId: EquipmentCustomerController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentCustomer content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentCustomer'
+      responses:
+        "201":
+          description: '{int} models.EquipmentCustomer'
+        "403":
+          description: body is empty
+  /equipment_customer/{id}:
+    get:
+      tags:
+      - equipment_customer
+      description: get EquipmentCustomer by id
+      operationId: EquipmentCustomerController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentCustomer'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_customer
+      description: update the EquipmentCustomer
+      operationId: EquipmentCustomerController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentCustomer content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentCustomer'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentCustomer'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_customer
+      description: delete the EquipmentCustomer
+      operationId: EquipmentCustomerController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_dtu_config/:
+    get:
+      tags:
+      - equipment_dtu_config
+      description: get EquipmentDtuConfig
+      operationId: EquipmentDtuConfigController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentDtuConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_dtu_config
+      description: create EquipmentDtuConfig
+      operationId: EquipmentDtuConfigController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentDtuConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentDtuConfig'
+      responses:
+        "201":
+          description: '{int} models.EquipmentDtuConfig'
+        "403":
+          description: body is empty
+  /equipment_dtu_config/{id}:
+    get:
+      tags:
+      - equipment_dtu_config
+      description: get EquipmentDtuConfig by id
+      operationId: EquipmentDtuConfigController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentDtuConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_dtu_config
+      description: update the EquipmentDtuConfig
+      operationId: EquipmentDtuConfigController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentDtuConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentDtuConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentDtuConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_dtu_config
+      description: delete the EquipmentDtuConfig
+      operationId: EquipmentDtuConfigController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_gateway/:
+    get:
+      tags:
+      - equipment_gateway
+      description: get EquipmentGateway
+      operationId: EquipmentGatewayController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentGateway'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_gateway
+      description: create EquipmentGateway
+      operationId: EquipmentGatewayController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentGateway content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentGateway'
+      responses:
+        "201":
+          description: '{int} models.EquipmentGateway'
+        "403":
+          description: body is empty
+  /equipment_gateway/{id}:
+    get:
+      tags:
+      - equipment_gateway
+      description: get EquipmentGateway by id
+      operationId: EquipmentGatewayController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentGateway'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_gateway
+      description: update the EquipmentGateway
+      operationId: EquipmentGatewayController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentGateway content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentGateway'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentGateway'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_gateway
+      description: delete the EquipmentGateway
+      operationId: EquipmentGatewayController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_meter_addr_config/:
+    get:
+      tags:
+      - equipment_meter_addr_config
+      description: get EquipmentMeterAddrConfig
+      operationId: EquipmentMeterAddrConfigController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterAddrConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_meter_addr_config
+      description: create EquipmentMeterAddrConfig
+      operationId: EquipmentMeterAddrConfigController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentMeterAddrConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterAddrConfig'
+      responses:
+        "201":
+          description: '{int} models.EquipmentMeterAddrConfig'
+        "403":
+          description: body is empty
+  /equipment_meter_addr_config/{id}:
+    get:
+      tags:
+      - equipment_meter_addr_config
+      description: get EquipmentMeterAddrConfig by id
+      operationId: EquipmentMeterAddrConfigController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterAddrConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_meter_addr_config
+      description: update the EquipmentMeterAddrConfig
+      operationId: EquipmentMeterAddrConfigController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterAddrConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterAddrConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterAddrConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_meter_addr_config
+      description: delete the EquipmentMeterAddrConfig
+      operationId: EquipmentMeterAddrConfigController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_meter_config/:
+    get:
+      tags:
+      - equipment_meter_config
+      description: get EquipmentMeterConfig
+      operationId: EquipmentMeterConfigController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_meter_config
+      description: create EquipmentMeterConfig
+      operationId: EquipmentMeterConfigController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterConfig'
+      responses:
+        "201":
+          description: '{int} models.EquipmentMeterConfig'
+        "403":
+          description: body is empty
+  /equipment_meter_config/{id}:
+    get:
+      tags:
+      - equipment_meter_config
+      description: get EquipmentMeterConfig by id
+      operationId: EquipmentMeterConfigController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_meter_config
+      description: update the EquipmentMeterConfig
+      operationId: EquipmentMeterConfigController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_meter_config
+      description: delete the EquipmentMeterConfig
+      operationId: EquipmentMeterConfigController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_meter_config_field/:
+    get:
+      tags:
+      - equipment_meter_config_field
+      description: get EquipmentMeterConfigField
+      operationId: EquipmentMeterConfigFieldController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfigField'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_meter_config_field
+      description: create EquipmentMeterConfigField
+      operationId: EquipmentMeterConfigFieldController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentMeterConfigField content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterConfigField'
+      responses:
+        "201":
+          description: '{int} models.EquipmentMeterConfigField'
+        "403":
+          description: body is empty
+  /equipment_meter_config_field/{id}:
+    get:
+      tags:
+      - equipment_meter_config_field
+      description: get EquipmentMeterConfigField by id
+      operationId: EquipmentMeterConfigFieldController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfigField'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_meter_config_field
+      description: update the EquipmentMeterConfigField
+      operationId: EquipmentMeterConfigFieldController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterConfigField content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterConfigField'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterConfigField'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_meter_config_field
+      description: delete the EquipmentMeterConfigField
+      operationId: EquipmentMeterConfigFieldController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_meter_rom_config/:
+    get:
+      tags:
+      - equipment_meter_rom_config
+      description: get EquipmentMeterRomConfig
+      operationId: EquipmentMeterRomConfigController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterRomConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_meter_rom_config
+      description: create EquipmentMeterRomConfig
+      operationId: EquipmentMeterRomConfigController.Post
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterRomConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterRomConfig'
+      responses:
+        "201":
+          description: '{int} models.EquipmentMeterRomConfig'
+        "403":
+          description: body is empty
+  /equipment_meter_rom_config/{id}:
+    get:
+      tags:
+      - equipment_meter_rom_config
+      description: get EquipmentMeterRomConfig by id
+      operationId: EquipmentMeterRomConfigController.Get One
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterRomConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_meter_rom_config
+      description: update the EquipmentMeterRomConfig
+      operationId: EquipmentMeterRomConfigController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterRomConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterRomConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterRomConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_meter_rom_config
+      description: delete the EquipmentMeterRomConfig
+      operationId: EquipmentMeterRomConfigController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_meter_type/:
+    get:
+      tags:
+      - equipment_meter_type
+      description: get EquipmentMeterType
+      operationId: EquipmentMeterTypeController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterType'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_meter_type
+      description: create EquipmentMeterType
+      operationId: EquipmentMeterTypeController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentMeterType content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterType'
+      responses:
+        "201":
+          description: '{int} models.EquipmentMeterType'
+        "403":
+          description: body is empty
+  /equipment_meter_type/{id}:
+    get:
+      tags:
+      - equipment_meter_type
+      description: get EquipmentMeterType by id
+      operationId: EquipmentMeterTypeController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterType'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_meter_type
+      description: update the EquipmentMeterType
+      operationId: EquipmentMeterTypeController.Put
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentMeterType content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentMeterType'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentMeterType'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_meter_type
+      description: delete the EquipmentMeterType
+      operationId: EquipmentMeterTypeController.Delete
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_room/:
+    get:
+      tags:
+      - equipment_room
+      description: get EquipmentRoom
+      operationId: EquipmentRoomController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentRoom'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_room
+      description: create EquipmentRoom
+      operationId: EquipmentRoomController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentRoom content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentRoom'
+      responses:
+        "201":
+          description: '{int} models.EquipmentRoom'
+        "403":
+          description: body is empty
+  /equipment_room/{id}:
+    get:
+      tags:
+      - equipment_room
+      description: get EquipmentRoom by id
+      operationId: EquipmentRoomController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentRoom'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_room
+      description: update the EquipmentRoom
+      operationId: EquipmentRoomController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentRoom content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentRoom'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentRoom'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_room
+      description: delete the EquipmentRoom
+      operationId: EquipmentRoomController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_simcards/:
+    get:
+      tags:
+      - equipment_simcards
+      description: get EquipmentSimcards
+      operationId: EquipmentSimcardsController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentSimcards'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_simcards
+      description: create EquipmentSimcards
+      operationId: EquipmentSimcardsController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentSimcards content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentSimcards'
+      responses:
+        "201":
+          description: '{int} models.EquipmentSimcards'
+        "403":
+          description: body is empty
+  /equipment_simcards/{id}:
+    get:
+      tags:
+      - equipment_simcards
+      description: get EquipmentSimcards by id
+      operationId: EquipmentSimcardsController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentSimcards'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_simcards
+      description: update the EquipmentSimcards
+      operationId: EquipmentSimcardsController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentSimcards content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentSimcards'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentSimcards'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_simcards
+      description: delete the EquipmentSimcards
+      operationId: EquipmentSimcardsController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_table_config/:
+    get:
+      tags:
+      - equipment_table_config
+      description: get EquipmentTableConfig
+      operationId: EquipmentTableConfigController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentTableConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_table_config
+      description: create EquipmentTableConfig
+      operationId: EquipmentTableConfigController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentTableConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentTableConfig'
+      responses:
+        "201":
+          description: '{int} models.EquipmentTableConfig'
+        "403":
+          description: body is empty
+  /equipment_table_config/{id}:
+    get:
+      tags:
+      - equipment_table_config
+      description: get EquipmentTableConfig by id
+      operationId: EquipmentTableConfigController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentTableConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_table_config
+      description: update the EquipmentTableConfig
+      operationId: EquipmentTableConfigController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentTableConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentTableConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentTableConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_table_config
+      description: delete the EquipmentTableConfig
+      operationId: EquipmentTableConfigController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /equipment_vendor/:
+    get:
+      tags:
+      - equipment_vendor
+      description: get EquipmentVendor
+      operationId: EquipmentVendorController.Get All
+      parameters:
+      - in: header
+        name: token
+        description: token
+        required: true
+        type: string
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      - in: query
+        name: paging
+        description: Paging return
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentVendor'
+        "403":
+          description: ""
+    post:
+      tags:
+      - equipment_vendor
+      description: create EquipmentVendor
+      operationId: EquipmentVendorController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for EquipmentVendor content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentVendor'
+      responses:
+        "201":
+          description: '{int} models.EquipmentVendor'
+        "403":
+          description: body is empty
+  /equipment_vendor/{id}:
+    get:
+      tags:
+      - equipment_vendor
+      description: get EquipmentVendor by id
+      operationId: EquipmentVendorController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentVendor'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - equipment_vendor
+      description: update the EquipmentVendor
+      operationId: EquipmentVendorController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for EquipmentVendor content
+        required: true
+        schema:
+          $ref: '#/definitions/models.EquipmentVendor'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.EquipmentVendor'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - equipment_vendor
+      description: delete the EquipmentVendor
+      operationId: EquipmentVendorController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /home/config:
+    get:
+      tags:
+      - home
+      parameters:
+      - in: query
+        name: key
+        description: key
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: string
+        "403":
+          description: ""
+  /home/dologin:
+    get:
+      tags:
+      - home
+      parameters:
+      - in: query
+        name: username
+        description: user name
+        required: true
+        type: string
+      - in: query
+        name: password
+        description: user password
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUser'
+        "403":
+          description: ""
+  /sys_backend_conf/:
+    get:
+      tags:
+      - sys_backend_conf
+      description: get SysBackendConf
+      operationId: SysBackendConfController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendConf'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_backend_conf
+      description: create SysBackendConf
+      operationId: SysBackendConfController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBackendConf content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendConf'
+      responses:
+        "201":
+          description: '{int} models.SysBackendConf'
+        "403":
+          description: body is empty
+  /sys_backend_conf/{id}:
+    get:
+      tags:
+      - sys_backend_conf
+      description: get SysBackendConf by id
+      operationId: SysBackendConfController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendConf'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_backend_conf
+      description: update the SysBackendConf
+      operationId: SysBackendConfController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBackendConf content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendConf'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendConf'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_backend_conf
+      description: delete the SysBackendConf
+      operationId: SysBackendConfController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_backend_user/:
+    get:
+      tags:
+      - sys_backend_user
+      description: get SysBackendUser
+      operationId: SysBackendUserController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUser'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_backend_user
+      description: create SysBackendUser
+      operationId: SysBackendUserController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBackendUser content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendUser'
+      responses:
+        "201":
+          description: '{int} models.SysBackendUser'
+        "403":
+          description: body is empty
+  /sys_backend_user/{id}:
+    get:
+      tags:
+      - sys_backend_user
+      description: get SysBackendUser by id
+      operationId: SysBackendUserController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUser'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_backend_user
+      description: update the SysBackendUser
+      operationId: SysBackendUserController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBackendUser content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendUser'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUser'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_backend_user
+      description: delete the SysBackendUser
+      operationId: SysBackendUserController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_backend_user_rms_roles/:
+    get:
+      tags:
+      - sys_backend_user_rms_roles
+      description: get SysBackendUserRmsRoles
+      operationId: SysBackendUserRmsRolesController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUserRmsRoles'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_backend_user_rms_roles
+      description: create SysBackendUserRmsRoles
+      operationId: SysBackendUserRmsRolesController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysBackendUserRmsRoles content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendUserRmsRoles'
+      responses:
+        "201":
+          description: '{int} models.SysBackendUserRmsRoles'
+        "403":
+          description: body is empty
+  /sys_backend_user_rms_roles/{id}:
+    get:
+      tags:
+      - sys_backend_user_rms_roles
+      description: get SysBackendUserRmsRoles by id
+      operationId: SysBackendUserRmsRolesController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUserRmsRoles'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_backend_user_rms_roles
+      description: update the SysBackendUserRmsRoles
+      operationId: SysBackendUserRmsRolesController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysBackendUserRmsRoles content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysBackendUserRmsRoles'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysBackendUserRmsRoles'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_backend_user_rms_roles
+      description: delete the SysBackendUserRmsRoles
+      operationId: SysBackendUserRmsRolesController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_conn_config/:
+    get:
+      tags:
+      - sys_conn_config
+      description: get SysConnConfig
+      operationId: SysConnConfigController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysConnConfig'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_conn_config
+      description: create SysConnConfig
+      operationId: SysConnConfigController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysConnConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysConnConfig'
+      responses:
+        "201":
+          description: '{int} models.SysConnConfig'
+        "403":
+          description: body is empty
+  /sys_conn_config/{id}:
+    get:
+      tags:
+      - sys_conn_config
+      description: get SysConnConfig by id
+      operationId: SysConnConfigController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysConnConfig'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_conn_config
+      description: update the SysConnConfig
+      operationId: SysConnConfigController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysConnConfig content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysConnConfig'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysConnConfig'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_conn_config
+      description: delete the SysConnConfig
+      operationId: SysConnConfigController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_logintrace/:
+    get:
+      tags:
+      - sys_logintrace
+      description: get SysLogintrace
+      operationId: SysLogintraceController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysLogintrace'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_logintrace
+      description: create SysLogintrace
+      operationId: SysLogintraceController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysLogintrace content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysLogintrace'
+      responses:
+        "201":
+          description: '{int} models.SysLogintrace'
+        "403":
+          description: body is empty
+  /sys_logintrace/{id}:
+    get:
+      tags:
+      - sys_logintrace
+      description: get SysLogintrace by id
+      operationId: SysLogintraceController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysLogintrace'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_logintrace
+      description: update the SysLogintrace
+      operationId: SysLogintraceController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysLogintrace content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysLogintrace'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysLogintrace'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_logintrace
+      description: delete the SysLogintrace
+      operationId: SysLogintraceController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_resource/:
+    get:
+      tags:
+      - sys_resource
+      description: get SysResource
+      operationId: SysResourceController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysResource'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_resource
+      description: create SysResource
+      operationId: SysResourceController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysResource content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysResource'
+      responses:
+        "201":
+          description: '{int} models.SysResource'
+        "403":
+          description: body is empty
+  /sys_resource/{id}:
+    get:
+      tags:
+      - sys_resource
+      description: get SysResource by id
+      operationId: SysResourceController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysResource'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_resource
+      description: update the SysResource
+      operationId: SysResourceController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysResource content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysResource'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysResource'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_resource
+      description: delete the SysResource
+      operationId: SysResourceController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_role/:
+    get:
+      tags:
+      - sys_role
+      description: get SysRole
+      operationId: SysRoleController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRole'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_role
+      description: create SysRole
+      operationId: SysRoleController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysRole content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRole'
+      responses:
+        "201":
+          description: '{int} models.SysRole'
+        "403":
+          description: body is empty
+  /sys_role/{id}:
+    get:
+      tags:
+      - sys_role
+      description: get SysRole by id
+      operationId: SysRoleController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRole'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_role
+      description: update the SysRole
+      operationId: SysRoleController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysRole content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRole'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRole'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_role
+      description: delete the SysRole
+      operationId: SysRoleController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_role_backenduser_rel/:
+    get:
+      tags:
+      - sys_role_backenduser_rel
+      description: get SysRoleBackenduserRel
+      operationId: SysRoleBackenduserRelController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleBackenduserRel'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_role_backenduser_rel
+      description: create SysRoleBackenduserRel
+      operationId: SysRoleBackenduserRelController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysRoleBackenduserRel content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRoleBackenduserRel'
+      responses:
+        "201":
+          description: '{int} models.SysRoleBackenduserRel'
+        "403":
+          description: body is empty
+  /sys_role_backenduser_rel/{id}:
+    get:
+      tags:
+      - sys_role_backenduser_rel
+      description: get SysRoleBackenduserRel by id
+      operationId: SysRoleBackenduserRelController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleBackenduserRel'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_role_backenduser_rel
+      description: update the SysRoleBackenduserRel
+      operationId: SysRoleBackenduserRelController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysRoleBackenduserRel content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRoleBackenduserRel'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleBackenduserRel'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_role_backenduser_rel
+      description: delete the SysRoleBackenduserRel
+      operationId: SysRoleBackenduserRelController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_role_resource_rel/:
+    get:
+      tags:
+      - sys_role_resource_rel
+      description: get SysRoleResourceRel
+      operationId: SysRoleResourceRelController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleResourceRel'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_role_resource_rel
+      description: create SysRoleResourceRel
+      operationId: SysRoleResourceRelController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysRoleResourceRel content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRoleResourceRel'
+      responses:
+        "201":
+          description: '{int} models.SysRoleResourceRel'
+        "403":
+          description: body is empty
+  /sys_role_resource_rel/{id}:
+    get:
+      tags:
+      - sys_role_resource_rel
+      description: get SysRoleResourceRel by id
+      operationId: SysRoleResourceRelController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleResourceRel'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_role_resource_rel
+      description: update the SysRoleResourceRel
+      operationId: SysRoleResourceRelController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysRoleResourceRel content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysRoleResourceRel'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysRoleResourceRel'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_role_resource_rel
+      description: delete the SysRoleResourceRel
+      operationId: SysRoleResourceRelController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /sys_val/:
+    get:
+      tags:
+      - sys_val
+      description: get SysVal
+      operationId: SysValController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysVal'
+        "403":
+          description: ""
+    post:
+      tags:
+      - sys_val
+      description: create SysVal
+      operationId: SysValController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for SysVal content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysVal'
+      responses:
+        "201":
+          description: '{int} models.SysVal'
+        "403":
+          description: body is empty
+  /sys_val/{id}:
+    get:
+      tags:
+      - sys_val
+      description: get SysVal by id
+      operationId: SysValController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysVal'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - sys_val
+      description: update the SysVal
+      operationId: SysValController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for SysVal content
+        required: true
+        schema:
+          $ref: '#/definitions/models.SysVal'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.SysVal'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - sys_val
+      description: delete the SysVal
+      operationId: SysValController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.AlarmDtuSetting:
+    title: AlarmDtuSetting
+    type: object
+    properties:
+      AlarmTypeId:
+        description: 报警类型编号
+        type: string
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      ConfigId:
+        description: 采集表id(设备/回路id)
+        type: integer
+        format: int64
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CustomerId:
+        description: 客户id
+        type: string
+      DtuNo:
+        description: dtu编号
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      MaxValue:
+        description: 最大值
+        type: number
+        format: double
+      MeterAddress:
+        description: 表地址
+        type: integer
+        format: int64
+      MinValue:
+        description: 最小值
+        type: number
+        format: double
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.AlarmTypes:
+    title: AlarmTypes
+    type: object
+    properties:
+      AlarmTypeName:
+        description: 报警类型名称
+        type: string
+      AlarmTypeNo:
+        description: 报警类型编号
+        type: string
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Grade:
+        description: 报警程度:0.一般;1.紧急
+        type: integer
+        format: int64
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentCustomer:
+    title: EquipmentCustomer
+    type: object
+    properties:
+      Address:
+        description: 地址
+        type: string
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Contacts:
+        description: 联系人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CustomerDesc:
+        description: 客户全称
+        type: string
+      CustomerName:
+        description: 客户名称
+        type: string
+      CustomerNo:
+        description: 客户编号
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Latitude:
+        description: 纬度
+        type: number
+        format: double
+      Longitude:
+        description: 经度
+        type: number
+        format: double
+      Phone:
+        description: 联系电话
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+      Zone:
+        description: 区域
+        type: string
+  models.EquipmentDtuConfig:
+    title: EquipmentDtuConfig
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CustomerId:
+        description: 客户id
+        type: string
+      DtuNo:
+        description: dtu编号
+        type: string
+      ElectricalRoomCode:
+        description: 电房编号
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      RoomNo:
+        description: 电房编号
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      SimNo:
+        description: sim卡号
+        type: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+      TimeInterval:
+        description: 采集间隔
+        type: integer
+        format: int64
+  models.EquipmentGateway:
+    title: EquipmentGateway
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      GatewayDesc:
+        description: 网关名称
+        type: string
+      GatewayNo:
+        description: 网关编号
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 属性:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentMeterAddrConfig:
+    title: EquipmentMeterAddrConfig
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      MeterTypeNo:
+        description: 电表类型编号
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      SegmentLen:
+        description: 读取寄存器长度
+        type: integer
+        format: int64
+      SegmentNo:
+        description: 第几段
+        type: integer
+        format: int64
+      SegmentStartAddr:
+        description: 分段起始地址
+        type: integer
+        format: int64
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentMeterConfig:
+    title: EquipmentMeterConfig
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Ct:
+        description: 电流互感器变比
+        type: integer
+        format: int64
+      CustomerId:
+        description: 客户id
+        type: string
+      DtuNo:
+        description: dtu编号
+        type: string
+      GatewayAddress:
+        description: 网关地址
+        type: integer
+        format: int64
+      GatewayNo:
+        description: 网关编号
+        type: string
+      GatewayQzone:
+        description: 网关区域编码
+        type: integer
+        format: int64
+      GatewaySite:
+        description: 网关主站标识
+        type: integer
+        format: int64
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      LoopName:
+        description: 回路名称
+        type: string
+      MeterAddress:
+        description: 表地址
+        type: integer
+        format: int64
+      MeterTypeNo:
+        description: 电表类型编号
+        type: string
+      Pt:
+        description: 电压互感器变比
+        type: integer
+        format: int64
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+      Used:
+        description: 是否使用
+        type: integer
+        format: int64
+  models.EquipmentMeterConfigField:
+    title: EquipmentMeterConfigField
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      DsAddr:
+        description: 网关传输地址
+        type: integer
+        format: int64
+      DtuNo:
+        description: dtu编号
+        type: string
+      FieldName:
+        description: 字段
+        type: string
+      GatewayNo:
+        description: 网关编号
+        type: integer
+        format: int64
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      MeterAddress:
+        description: 表地址
+        type: integer
+        format: int64
+      MeterTypeNo:
+        description: 电表类型编号
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentMeterRomConfig:
+    title: EquipmentMeterRomConfig
+    type: object
+    properties:
+      AddressSort:
+        description: 地址排序
+        type: integer
+        format: int64
+      ByteLength:
+        description: 数据长度
+        type: integer
+        format: int64
+      Calcfactor:
+        description: 计算因子
+        type: number
+        format: double
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      DataType:
+        description: 数据类型
+        type: string
+      FunctionField:
+        description: 字段名
+        type: string
+      FunctionTable1:
+        description: 基础表
+        type: string
+      FunctionTable2:
+        description: 附加表
+        type: string
+      FunctionTable3:
+        description: 业务表
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      MeterTypeNo:
+        description: 电表类型编号
+        type: string
+      MsbBit:
+        description: 最高位为符号位
+        type: integer
+        format: int32
+      NeedCt:
+        description: 是否电流互感器变比
+        type: integer
+        format: int32
+      NeedPt:
+        description: 是否电压互感器变化
+        type: integer
+        format: int32
+      Offset:
+        description: 解析协议时相对上个属性的偏移值
+        type: integer
+        format: int64
+      RomAddress:
+        description: 寄存器地址
+        type: string
+      RomName:
+        description: 寄存器名称
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      SegmentNo:
+        description: 表示该属性属于协议的第几段
+        type: integer
+        format: int64
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+      Units:
+        description: 单位
+        type: string
+  models.EquipmentMeterType:
+    title: EquipmentMeterType
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CtAddress:
+        description: 电流互感器变比地址
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      MeterType:
+        description: 电表类型
+        type: string
+      MeterTypeNo:
+        description: 电表类型编号
+        type: string
+      PtAddress:
+        description: 电压互感器变比地址
+        type: string
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 属性:0.正常1.删除
+        type: integer
+        format: int64
+      ThreePhase:
+        description: 是否三相电表:0.单相1.三相
+        type: integer
+        format: int32
+      VendorNo:
+        description: 设备厂商编号
+        type: integer
+        format: int64
+  models.EquipmentRoom:
+    title: EquipmentRoom
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CustomerNo:
+        description: 客户编号
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      RoomName:
+        description: 电房名称
+        type: string
+      RoomNo:
+        description: 电房编号
+        type: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentSimcards:
+    title: EquipmentSimcards
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      CustomerId:
+        description: 客户Id
+        type: string
+      ICCID:
+        description: ICCID
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Packagestarttime:
+        description: 生效时间
+        type: string
+        format: string
+      Packagestoptime:
+        description: 结束时间
+        type: string
+        format: string
+      Remaintraffic:
+        description: 剩余量
+        type: number
+        format: double
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      SimNo:
+        description: sim卡号
+        type: string
+      Tag:
+        description: 属性:0.正常1.删除
+        type: integer
+        format: int64
+      Totaltraffic:
+        description: 总流量
+        type: number
+        format: double
+      Trafficsynctime:
+        description: 同步时间
+        type: string
+        format: string
+      Used:
+        description: 是否已绑定
+        type: integer
+        format: int64
+      Usetraffic:
+        description: 使用量
+        type: number
+        format: double
+  models.EquipmentTableConfig:
+    title: EquipmentTableConfig
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      FieldDesc:
+        description: 字段名称
+        type: string
+      FieldName:
+        description: 字段
+        type: string
+      FunctionTable1:
+        description: 表名
+        type: string
+      FunctionTable2:
+        type: string
+      FunctionTable3:
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+  models.EquipmentVendor:
+    title: EquipmentVendor
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Rowver:
+        description: 时间戳
+        type: string
+        format: string
+      Tag:
+        description: 属性:0.正常1.删除
+        type: integer
+        format: int64
+      VendorDesc:
+        description: 供应商名称
+        type: string
+      VendorNo:
+        description: 供应商编号
+        type: string
+  models.SysBackendConf:
+    title: SysBackendConf
+    type: object
+    properties:
+      Appname:
+        type: string
+      Appversion:
+        type: string
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Configtext:
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Deploy:
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Tag:
+        description: 状态
+        type: integer
+        format: int64
+  models.SysBackendUser:
+    title: SysBackendUser
+    type: object
+    properties:
+      Avatar:
+        type: string
+      Email:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IsSuper:
+        type: integer
+        format: int32
+      Mobile:
+        type: string
+      RealName:
+        type: string
+      Status:
+        type: integer
+        format: int64
+      UserName:
+        type: string
+      UserPwd:
+        type: string
+  models.SysBackendUserRmsRoles:
+    title: SysBackendUserRmsRoles
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      RmsBackendUserId:
+        type: integer
+        format: int64
+      RmsRoleId:
+        type: integer
+        format: int64
+  models.SysConnConfig:
+    title: SysConnConfig
+    type: object
+    properties:
+      CREATEPERSONNAME:
+        type: string
+      CREATETIME:
+        type: string
+        format: string
+      DBNAME:
+        type: string
+      DBTYPE:
+        type: string
+      DBVERSION:
+        type: string
+      DELETED:
+        type: integer
+        format: int64
+      HOST:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      PASSWORD:
+        type: string
+      PORT:
+        type: integer
+        format: int64
+      REMARK:
+        type: string
+      SHORTNAME:
+        type: string
+      USERNAME:
+        type: string
+  models.SysLogintrace:
+    title: SysLogintrace
+    type: object
+    properties:
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      LoginTime:
+        description: 登录时间
+        type: string
+        format: string
+      RemoteAddr:
+        description: IP地址
+        type: string
+      User:
+        description: 用户名
+        type: string
+  models.SysResource:
+    title: SysResource
+    type: object
+    properties:
+      Icon:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      ParentId:
+        type: integer
+        format: int64
+      Rtype:
+        type: integer
+        format: int64
+      Seq:
+        type: integer
+        format: int64
+      UrlFor:
+        type: string
+  models.SysRole:
+    title: SysRole
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Seq:
+        type: integer
+        format: int64
+  models.SysRoleBackenduserRel:
+    title: SysRoleBackenduserRel
+    type: object
+    properties:
+      BackendUserId:
+        type: integer
+        format: int64
+      Created:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      RoleId:
+        type: integer
+        format: int64
+  models.SysRoleResourceRel:
+    title: SysRoleResourceRel
+    type: object
+    properties:
+      Created:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      ResourceId:
+        type: integer
+        format: int64
+      RoleId:
+        type: integer
+        format: int64
+  models.SysVal:
+    title: SysVal
+    type: object
+    properties:
+      Changedate:
+        description: 修改时间
+        type: string
+        format: string
+      Changeuser:
+        description: 修改人
+        type: string
+      Code:
+        description: 代码
+        type: string
+      Createdate:
+        description: 创建时间
+        type: string
+        format: string
+      Createuser:
+        description: 创建人
+        type: string
+      Desc:
+        description: 描述
+        type: string
+      Id:
+        description: 序号
+        type: integer
+        format: int64
+      Step:
+        description: 步长
+        type: string
+      Tag:
+        description: 状态:0.正常1.删除
+        type: integer
+        format: int64
+      Uplimit:
+        description: 上限
+        type: string
+      Value:
+        description: 变量
+        type: string
+tags:
+- name: alarm_dtu_setting
+  description: |
+    AlarmDtuSettingController operations for AlarmDtuSetting
+- name: alarm_types
+  description: |
+    AlarmTypesController operations for AlarmTypes
+- name: equipment_customer
+  description: |
+    EquipmentCustomerController operations for EquipmentCustomer
+- name: equipment_dtu_config
+  description: |
+    EquipmentDtuConfigController operations for EquipmentDtuConfig
+- name: equipment_gateway
+  description: |
+    EquipmentGatewayController operations for EquipmentGateway
+- name: equipment_meter_addr_config
+  description: |
+    EquipmentMeterAddrConfigController operations for EquipmentMeterAddrConfig
+- name: equipment_meter_config
+  description: |
+    EquipmentMeterConfigController operations for EquipmentMeterConfig
+- name: equipment_meter_config_field
+  description: |
+    EquipmentMeterConfigFieldController operations for EquipmentMeterConfigField
+- name: equipment_meter_rom_config
+  description: |
+    EquipmentMeterRomConfigController operations for EquipmentMeterRomConfig
+- name: equipment_meter_type
+  description: |
+    EquipmentMeterTypeController operations for EquipmentMeterType
+- name: equipment_room
+  description: |
+    EquipmentRoomController operations for EquipmentRoom
+- name: equipment_simcards
+  description: |
+    EquipmentSimcardsController operations for EquipmentSimcards
+- name: equipment_table_config
+  description: |
+    EquipmentTableConfigController operations for EquipmentTableConfig
+- name: equipment_vendor
+  description: |
+    EquipmentVendorController operations for EquipmentVendor
+- name: sys_backend_conf
+  description: |
+    SysBackendConfController operations for SysBackendConf
+- name: sys_backend_user
+  description: |
+    SysBackendUserController operations for SysBackendUserGetAllSysBackendUser
+- name: sys_backend_user_rms_roles
+  description: |
+    SysBackendUserRmsRolesController operations for SysBackendUserRmsRoles
+- name: sys_conn_config
+  description: |
+    SysConnConfigController operations for SysConnConfig
+- name: sys_logintrace
+  description: |
+    SysLogintraceController operations for SysLogintrace
+- name: sys_resource
+  description: |
+    SysResourceController operations for SysResource
+- name: sys_role
+  description: |
+    SysRoleController operations for SysRole
+- name: sys_role_backenduser_rel
+  description: |
+    SysRoleBackenduserRelController operations for SysRoleBackenduserRel
+- name: sys_role_resource_rel
+  description: |
+    SysRoleResourceRelController operations for SysRoleResourceRel
+- name: sys_val
+  description: |
+    SysValController operations for SysVal
