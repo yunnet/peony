@@ -1,16 +1,16 @@
 package main
 
 import (
-	_ "github.com/yunnet/peony/routers"
-	_ "github.com/yunnet/peony/sysinit"
-
 	"github.com/astaxie/beego"
+	_ "github.com/yunnet/walkdog/routers"
+	_ "github.com/yunnet/walkdog/sysinit"
 )
 
 func main() {
-	//if beego.BConfig.RunMode == "dev" {
-	//
-	//}
+	if beego.BConfig.RunMode == "dev" {
+		beego.BConfig.Log.AccessLogs = true
+		beego.BConfig.Log.EnableStaticLogs = true
+	}
 
 	beego.BConfig.WebConfig.DirectoryIndex = true
 	beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
@@ -18,4 +18,3 @@ func main() {
 	//启用Session
 	beego.Run()
 }
-
