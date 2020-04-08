@@ -1,14 +1,14 @@
 package sysinit
 
 import (
+	_ "github.com/yunnet/peony/models"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	_ "github.com/yunnet/walkdog/models"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func init() {
+func init()  {
 	//启用Session
 	beego.BConfig.WebConfig.Session.SessionOn = true
 
@@ -36,10 +36,11 @@ func init() {
 
 	dbCharset := beego.AppConfig.String(dbType + "::db_charset")
 
+
 	orm.RegisterDataBase(dbAlias, dbType, dbUser+":"+dbPwd+"@tcp("+dbHost+":"+dbPort+")/"+dbName+"?charset="+dbCharset+"&loc=Asia%2FShanghai", 30)
 
 	//如果是开发模式，则显示命令信息
-	isDev := beego.AppConfig.String("runmode") == "dev"
+	isDev := (beego.AppConfig.String("runmode") == "dev")
 
 	//自动建表
 	orm.RunSyncdb("default", false, isDev)
